@@ -4,7 +4,7 @@
 Docker images:
 
 	Kibana: 		latest version, Official
-	Elasticsear: 	latest version, Official + Data on EFS
+	Elasticsearch: 	latest version, Official + Data on EFS
 	Logstash:		Modified version, cloudtrail codec plugin installed, image uploaded to private ECR
 
 <b>Amazon Elastic File system is used, mounted to:</b>
