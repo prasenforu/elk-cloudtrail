@@ -7,7 +7,7 @@ Docker images:
 	Elasticsearch: 	latest version, Official + Data on EFS
 	Logstash:		Modified version, cloudtrail codec plugin installed, image uploaded to private ECR
 
-<b>Amazon Elastic File system is used, mounted to:</b>
+<b>Amazon Elastic File system is used, mounted to /opt/efs/ on EC2 instances:</b>
 
 	 ECS Cluster node (EC2): /opt/efs/elasticsearch_data
 		|_Elasticsearch container: /usr/share/elasticsearch/data	#to save Elasticsearch data
