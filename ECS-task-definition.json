@@ -19,7 +19,7 @@
       "targetType": null
     }
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:004829846714:task-definition/elk-5:51",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:AMAZON_ACCOUNT_ID_HERE:task-definition/elk-5:51",
   "networkMode": "bridge",
   "status": "ACTIVE",
   "revision": 51,
@@ -145,7 +145,7 @@
       ],
       "workingDirectory": null,
       "readonlyRootFilesystem": null,
-      "image": "004829846714.dkr.ecr.us-east-1.amazonaws.com/logstash5:latest",
+      "image": "AMAZON_ACCOUNT_ID_HERE.dkr.ecr.us-east-1.amazonaws.com/logstash5:latest",
       "command": [],
       "user": null,
       "dockerLabels": null,
