@@ -1,0 +1,174 @@
+{
+  "requiresAttributes": [
+    {
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17",
+      "targetId": null,
+      "targetType": null
+    },
+    {
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18",
+      "targetId": null,
+      "targetType": null
+    },
+    {
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.ecr-auth",
+      "targetId": null,
+      "targetType": null
+    }
+  ],
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:004829846714:task-definition/elk-5:51",
+  "networkMode": "bridge",
+  "status": "ACTIVE",
+  "revision": 51,
+  "taskRoleArn": null,
+  "containerDefinitions": [
+    {
+      "volumesFrom": [],
+      "memory": 3072,
+      "extraHosts": null,
+      "dnsServers": null,
+      "disableNetworking": null,
+      "dnsSearchDomains": null,
+      "portMappings": [
+        {
+          "hostPort": 9200,
+          "containerPort": 9200,
+          "protocol": "tcp"
+        },
+        {
+          "hostPort": 9300,
+          "containerPort": 9300,
+          "protocol": "tcp"
+        }
+      ],
+      "hostname": "elasticsearsh",
+      "essential": true,
+      "entryPoint": null,
+      "mountPoints": [
+        {
+          "containerPath": "/usr/share/elasticsearch/data/",
+          "sourceVolume": "ES_data",
+          "readOnly": null
+        }
+      ],
+      "name": "elasticsearch",
+      "ulimits": [
+        {
+          "softLimit": 65536,
+          "hardLimit": 65536,
+          "name": "nofile"
+        }
+      ],
+      "dockerSecurityOptions": null,
+      "environment": [],
+      "links": [],
+      "workingDirectory": null,
+      "readonlyRootFilesystem": null,
+      "image": "elasticsearch:5",
+      "command": [],
+      "user": null,
+      "dockerLabels": null,
+      "logConfiguration": null,
+      "cpu": 0,
+      "privileged": null,
+      "memoryReservation": null
+    },
+    {
+      "volumesFrom": [],
+      "memory": 1024,
+      "extraHosts": null,
+      "dnsServers": null,
+      "disableNetworking": null,
+      "dnsSearchDomains": null,
+      "portMappings": [
+        {
+          "hostPort": 5601,
+          "containerPort": 5601,
+          "protocol": "tcp"
+        }
+      ],
+      "hostname": null,
+      "essential": false,
+      "entryPoint": null,
+      "mountPoints": [],
+      "name": "kibana5",
+      "ulimits": null,
+      "dockerSecurityOptions": null,
+      "environment": [],
+      "links": [
+        "elasticsearch:elasticsearch"
+      ],
+      "workingDirectory": null,
+      "readonlyRootFilesystem": null,
+      "image": "kibana:5",
+      "command": null,
+      "user": null,
+      "dockerLabels": null,
+      "logConfiguration": null,
+      "cpu": 0,
+      "privileged": null,
+      "memoryReservation": null
+    },
+    {
+      "volumesFrom": [],
+      "memory": 2048,
+      "extraHosts": null,
+      "dnsServers": null,
+      "disableNetworking": null,
+      "dnsSearchDomains": null,
+      "portMappings": [
+        {
+          "hostPort": 5044,
+          "containerPort": 5044,
+          "protocol": "tcp"
+        }
+      ],
+      "hostname": null,
+      "essential": false,
+      "entryPoint": null,
+      "mountPoints": [
+        {
+          "containerPath": "/usr/share/logstash/data/",
+          "sourceVolume": "logstash_data",
+          "readOnly": null
+        }
+      ],
+      "name": "logstash5",
+      "ulimits": null,
+      "dockerSecurityOptions": null,
+      "environment": [],
+      "links": [
+        "elasticsearch:elasticsearch"
+      ],
+      "workingDirectory": null,
+      "readonlyRootFilesystem": null,
+      "image": "004829846714.dkr.ecr.us-east-1.amazonaws.com/logstash5:latest",
+      "command": [],
+      "user": null,
+      "dockerLabels": null,
+      "logConfiguration": null,
+      "cpu": 0,
+      "privileged": false,
+      "memoryReservation": null
+    }
+  ],
+  "placementConstraints": [],
+  "volumes": [
+    {
+      "host": {
+        "sourcePath": "/opt/efs/elasticsearch_data"
+      },
+      "name": "ES_data"
+    },
+    {
+      "host": {
+        "sourcePath": "/opt/efs/logstash_data"
+      },
+      "name": "logstash_data"
+    }
+  ],
+  "family": "elk-5"
+}
