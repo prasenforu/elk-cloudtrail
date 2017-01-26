@@ -34,5 +34,17 @@ Docker images:
 5.	Run Docker Compose form elk_v_5 folder
 
 	docker-compose up -d
+	
+6. 	View `Kibana` at http://localhost:5601
+
+    	Use the **index pattern** as `logtash-*` and select the **time field** as `@timestamp`
+
+For Stop, shutdown and restart
+
+1. `sudo docker-compose stop` to shutdown all the docker containers.
+
+2. `sudo docker-compose down` to shutdown and remove all the files from docker. 
+
+3. `sudo docker-compose restart` to restart docker container. 
 
 
