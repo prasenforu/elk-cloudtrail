@@ -1,4 +1,4 @@
-# elk_v_5
+# elk-cloudtrail
 <i>ELK v5 stack for CloudTrail logs (Amazon Web Services API calls)</i>
 
 Docker images:
@@ -9,7 +9,7 @@ Docker images:
 
 <b>Installation:</b>
 
-1.	git clone https://github.com/prasenforu/elk_v_5.git
+1.	git clone https://github.com/prasenforu/elk-cloudtrail.git
 
 2.	Goto folder elk_v_5/logstash/   and edit/change following section as per your configuration
 
