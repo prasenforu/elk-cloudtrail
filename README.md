@@ -1,6 +1,8 @@
 # elk-cloudtrail
 <i>ELK v5 stack for CloudTrail logs (Amazon Web Services API calls)</i>
 
+![Alt text](https://github.com/prasenforu/elk-cloudtrail/blob/master/images/elk-cloudtrail.png "Overview") 
+
 Docker images:
 
 	Kibana: 		latest version, Official
