@@ -4,13 +4,30 @@
 Docker images:
 
 	Kibana: 		latest version, Official
-	Elasticsearch: 	latest version, Official + Data on EFS
-	Logstash:		Modified version, cloudtrail codec plugin installed, image uploaded to private ECR
+	Elasticsearch: 		latest version, Official + Data on EFS
+	Logstash:		Modified version, cloudtrail codec plugin installed, create new image (Logstash)
 
-<b>Amazon Elastic File system is used, mounted to /opt/efs/ on EC2 instances:</b>
+<b>Installation:</b>
 
-	 ECS Cluster node (EC2): /opt/efs/elasticsearch_data
-		|_Elasticsearch container: /usr/share/elasticsearch/data	#to save Elasticsearch data
-	 ECS Cluster node (EC2): /opt/efs/logstash_data
-		|_Logstash container: /usr/share/logstash/data 				#to save "sincedb" file with date of last s3 read by s3 logstash plugin
-      
+1.	git clone https://github.com/prasenforu/elk_v_5.git
+
+2.	Goto folder elk_v_5/logstash/   and edit/change following section as per your configuration
+
+	bucket => <b>"CLOUD_TRAIL_BUCKET_NAME"</b>
+  	access_key_id => <b>"Access_key"</b>
+  	secret_access_key => <b>"secret_Access_key"</b>
+	prefix => "AWSLogs/<b>AMAZON_ACCOUNT_ID_HERE</b>/CloudTrail/"
+
+3.	Make executable docker-entrypoint.sh
+
+	chmod 755 docker-entrypoint.sh
+
+4.	Build docker container
+
+	docker build -t logstash5 .
+
+5.	Run Docker Compose form elk_v_5 folder
+
+	docker-compose up -d
+
+
