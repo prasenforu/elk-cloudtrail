@@ -15,11 +15,11 @@ Docker images:
 
 	bucket => <b>"CLOUD_TRAIL_BUCKET_NAME"</b>
 	
-  	access_key_id => <b>"Access_key"</b>
+  	access_key_id => <b>"ACCESS_KEY"</b>
 	
-  	secret_access_key => <b>"secret_Access_key"</b>
+  	secret_access_key => <b>"SECRET_ACCESS_KEY"</b>
 	
-	prefix => "AWSLogs/<b>AMAZON_ACCOUNT_ID_HERE</b>/CloudTrail/"
+	prefix => "AWSLogs/<b>AMAZON_ACCOUNT_ID</b>/CloudTrail/"
 
 3.	Make executable docker-entrypoint.sh
 
