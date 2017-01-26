@@ -14,8 +14,11 @@ Docker images:
 2.	Goto folder elk_v_5/logstash/   and edit/change following section as per your configuration
 
 	bucket => <b>"CLOUD_TRAIL_BUCKET_NAME"</b>
+	
   	access_key_id => <b>"Access_key"</b>
+	
   	secret_access_key => <b>"secret_Access_key"</b>
+	
 	prefix => "AWSLogs/<b>AMAZON_ACCOUNT_ID_HERE</b>/CloudTrail/"
 
 3.	Make executable docker-entrypoint.sh
