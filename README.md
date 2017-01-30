@@ -13,7 +13,7 @@ Docker images:
 
 1.	git clone https://github.com/prasenforu/elk-cloudtrail.git
 
-2.	Goto folder elk-cloudtrail/logstash/   and edit/change following section as per your configuration
+2.	Goto folder "elk-cloudtrail/logstash/" and edit "logstash.conf" file following section as per your configuration
 
 	bucket => <b>"CLOUD_TRAIL_BUCKET_NAME"</b>
 	
